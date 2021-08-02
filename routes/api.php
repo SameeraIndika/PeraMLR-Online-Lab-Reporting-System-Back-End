@@ -56,6 +56,7 @@ Route::get('delete-officer/{id}', [OfficersController::class, 'deleteOfficer']);
 
 //Routs interact with LabreportsController
 Route::get('labreport', [LabreportsController::class, 'getLabreports']);
+Route::post('create-labreport', [LabreportsController::class, 'addLabReport']);
 
 //Routs interact with MessagesController
 Route::get('messages-info', [MessagesController::class, 'getMessageInfo']);
