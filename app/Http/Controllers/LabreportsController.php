@@ -7,10 +7,10 @@ use App\Models\Labreport;
 
 class LabreportsController extends Controller
 {
-    //Get Officers Information.
-    public function getOfficersInfo() {
+    //Get Labreports.
+    public function getLabreports() {
         return response()->json(Officer::all(), 200);
-        return Officer::all();
+        return Labreport::all();
     }
 
     //Add Labreports.
