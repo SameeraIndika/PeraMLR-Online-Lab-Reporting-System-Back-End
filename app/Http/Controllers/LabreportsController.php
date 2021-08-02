@@ -9,7 +9,7 @@ class LabreportsController extends Controller
 {
     //Get Labreports.
     public function getLabreports() {
-        return response()->json(Officer::all(), 200);
+        return response()->json(Labreport::all(), 200);
         return Labreport::all();
     }
 
