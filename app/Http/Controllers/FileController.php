@@ -7,6 +7,7 @@ use App\Models\Image;
 
 class FileController extends Controller
 {
+    // Upload File
     public function file(Request $request) {
         $image = new Image;
         if($request->hasFile('image')) {
@@ -16,6 +17,7 @@ class FileController extends Controller
             $extension = $request->file('image')->getClientOriginalExtension();
             $comPic = str_replace(' ', '_', $fileNameOnly).'-'.rand() . '_'.time(). '.'.$extension;
             //dd($comPic);
+            //$path = $request->file('image')->storeAs('public/images', $comPic);
             $path = $request->file('image')->storeAs('public/images', $comPic);
             //dd($path);
             $image->image = $comPic;
@@ -29,6 +31,7 @@ class FileController extends Controller
         }
     }
 
+    // Get File
     public function getFile() {
         return response()->json(Image::all(), 200);
     }

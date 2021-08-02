@@ -5,14 +5,16 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Message extends Model
+class Officer extends Model
 {
     use HasFactory;
     public $timestamps = false;
     protected $fillable = [
-        'sender_name',
-        'sender_email',
-        'subject',
-        'message',
+        'name',
+        'post',
+        'description',
+        'phone',
+        'email',
+        'profile',
     ];
 }

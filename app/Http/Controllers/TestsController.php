@@ -27,7 +27,7 @@ class TestsController extends Controller
         $test = Test::create($request->all());
         if($test) {
             $response['status'] = 1;
-            $response['message'] = 'New test added uccessfully!';
+            $response['message'] = 'New test added successfully!';
             $response['code'] = 200;
         }
         //return response($test, 201);
@@ -46,7 +46,7 @@ class TestsController extends Controller
         else if($test) {
             $test->delete();
             $response['status'] = 1;
-            $response['message'] = 'Test deleted uccessfully!';
+            $response['message'] = 'Test deleted successfully!';
             $response['code'] = 200;
             return response()->json($response);
         }
@@ -64,7 +64,7 @@ class TestsController extends Controller
         else if($test) {
             $test -> update($request->all());
             $response['status'] = 1;
-            $response['message'] = 'Test updated uccessfully!';
+            $response['message'] = 'Test updated successfully!';
             $response['code'] = 200;
             return response()->json($response);
         }
