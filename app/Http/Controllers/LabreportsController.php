@@ -7,21 +7,20 @@ use App\Models\Labreport;
 
 class LabreportsController extends Controller
 {
-    //Get Labreports.
+    // Get Labreports.
     public function getLabreports() {
         return response()->json(Labreport::all(), 200);
         return Labreport::all();
     }
 
-    //Add Labreports.
+    // Create Labreports.
     public function addLabReport(Request $request) {
         $labreport = Labreport::create($request->all());
         if($labreport) {
             $response['status'] = 1;
-            $response['message'] = 'New test added successfully!';
+            $response['message'] = 'Labreport created successfully!';
             $response['code'] = 200;
         }
-        //return response($test, 201);
         return response()->json($response);
     }
 }
